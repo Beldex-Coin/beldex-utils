@@ -177,6 +177,8 @@ class MyMoneroLibAppBridgeClass extends MyMoneroCoreBridgeEssentialsClass
 		};
 		const args = 
 		{
+			registration_string: fn_args.registration_string,
+			isRegisterStr: fn_args.isRegister,
 			fromWallet_didFailToInitialize: fn_args.fromWallet_didFailToInitialize,
 			fromWallet_didFailToBoot: fn_args.fromWallet_didFailToBoot,
 			fromWallet_needsImport: fn_args.fromWallet_needsImport,
