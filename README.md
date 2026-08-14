@@ -39,15 +39,13 @@ A [Lerna](https://lerna.js.org/) monorepo of JavaScript utility packages powerin
 ```bash
 git clone https://github.com/Beldex-Coin/beldex-utils.git
 cd beldex-utils
-npm install
-npm run bootstrap   # link local packages together via Lerna
+npm install   # installs dependencies and links local packages via npm workspaces
 ```
 
 ## Scripts
 
 | Command | Description |
 |---|---|
-| `npm run bootstrap` | Bootstrap packages with Lerna (`--hoist --force-local`) |
 | `npm test` | Run unit tests for all packages with coverage (nyc + mocha) |
 | `npm run test:lite` | Run unit tests without coverage |
 | `npm run lint` | Lint and auto-fix with [standard](https://standardjs.com/) |
