@@ -164,15 +164,16 @@ class WABridge {
    * Estimates the transaction fee based on two outputs.
    * @param {number} priority - The priority level the estimate is for.
    * @param {number} feePerb - The fee per byte. This is retrieved from the MM server.
+   * @param {number} feePero - The fee per output, defaults to 0.
    * @param {number} forkVersion - The fork version defaults to 0 which is the latest.
    * @returns {number} The estiamted fee amount in piconeros
    */
-  estimateTxFee (priority, feePerb, forkVersion = 0) {
+  estimateTxFee (priority, feePerb, feePero = 0, forkVersion = 0) {
     checkPriority(priority)
     if (isNaN(feePerb)) {
       throw Error('Invalid feePerb. must be an number')
     }
-    const retString = this.Module.estimateTxFee('' + priority, '' + feePerb, '' + forkVersion)
+    const retString = this.Module.estimateTxFee('' + priority, '' + feePerb, '' + feePero, '' + forkVersion)
     const ret = JSON.parse(retString)
 
     return parseInt(ret.retVal)
