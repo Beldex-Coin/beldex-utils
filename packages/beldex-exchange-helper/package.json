@@ -10,7 +10,7 @@
     "@bdxi/beldex-bigint": "^1.0.0",
     "@bdxi/beldex-exchange": "^1.0.0",
     "@bdxi/beldex-money-format": "^1.2.0",
-    "axios": "^0.21.3"
+    "axios": "^1.19.0"
   },
   "exports": {
     "require": "./index.js",

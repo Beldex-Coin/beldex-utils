@@ -16,7 +16,8 @@
     "access": "public"
   },
   "dependencies": {
-    "mocha": "^9.2.0"
+    "axios": "1.19.0",
+    "mocha": "^11.3.0"
   },
   "bugs": {
     "url": "https://github.com/Beldex-Coin/beldex-utils/issues"
