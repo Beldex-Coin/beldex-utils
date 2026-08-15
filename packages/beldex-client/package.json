@@ -20,5 +20,10 @@
   "gitHead": "8b2fb278e4a5aa84e577c9985fbca332fca4f1b0",
   "dependencies": {
     "axios": "1.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git",
+    "directory": "packages/beldex-client"
   }
 }

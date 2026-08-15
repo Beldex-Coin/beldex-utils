@@ -21,7 +21,8 @@
   "author": "Alexsanchez <alexsanchez@beldex.io>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git#master"
+    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git",
+    "directory": "packages/beldex-web-components"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
