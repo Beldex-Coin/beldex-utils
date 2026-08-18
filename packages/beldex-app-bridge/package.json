@@ -1,6 +1,6 @@
 {
   "name": "@bdxi/beldex-app-bridge",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -8,7 +8,8 @@
   "author": "Alexsanchez <alexsanchez@beldex.io>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git#master"
+    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git",
+    "directory": "packages/beldex-app-bridge"
   },
   "license": "BSD-3-Clause",
   "publishConfig": {

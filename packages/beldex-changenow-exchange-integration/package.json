@@ -23,16 +23,17 @@
   "author": "Alexsanchez <alexsanchez@beldex.io>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git#master"
+    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git",
+    "directory": "packages/beldex-changenow-exchange-integration"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
-    "axios": "^0.21.3"
+    "axios": "^1.19.0"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.19.0",
     "chai": "^4.3.4",
-    "mocha": "^9.2.0"
+    "mocha": "^11.3.0"
   },
   "publishConfig": {
     "access": "public"

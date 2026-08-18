@@ -17,11 +17,12 @@
   "author": "Alexsanchez <alexsanchez@beldex.io>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git#master"
+    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git",
+    "directory": "packages/beldex-exchange"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
-    "axios": "^0.21.3",
+    "axios": "^1.19.0",
     "process": "^0.11.10"
   },
   "publishConfig": {

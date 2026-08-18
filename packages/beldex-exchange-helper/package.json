@@ -10,7 +10,7 @@
     "@bdxi/beldex-bigint": "^1.0.0",
     "@bdxi/beldex-exchange": "^1.0.0",
     "@bdxi/beldex-money-format": "^1.2.0",
-    "axios": "^0.21.3"
+    "axios": "^1.19.0"
   },
   "exports": {
     "require": "./index.js",
@@ -32,7 +32,8 @@
   "author": "Alexsanchez <alexsanchez@beldex.io>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git#master"
+    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git",
+    "directory": "packages/beldex-exchange-helper"
   },
   "license": "BSD-3-Clause",
   "publishConfig": {

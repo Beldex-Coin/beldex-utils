@@ -9,14 +9,16 @@
   "author": "Alexsanchez <alexsanchez@beldex.io>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git"
+    "url": "git+https://github.com/Beldex-Coin/beldex-utils.git",
+    "directory": "packages/beldex-locales"
   },
   "license": "BSD-3-Clause",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "mocha": "^9.2.0"
+    "axios": "1.19.0",
+    "mocha": "^11.3.0"
   },
   "bugs": {
     "url": "https://github.com/Beldex-Coin/beldex-utils/issues"

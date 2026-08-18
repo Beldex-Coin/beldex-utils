@@ -10,7 +10,7 @@ describe('cryptonote_utils tests', function () {
     const WABridge = await require(wasmLocation)({})
     const decoded = WABridge.addressAndKeysFromSeed('9c973aa296b79bbf452781dd3d32ad7f', nettype)
     const expected = {
-      address: '43zxvpcj5Xv9SEkNXbMCG7LPQStHMpFCQCmkmR4u5nzjWwq5Xkv5VmGgYEsHXg4ja2FGRD5wMWbBVMijDTqmmVqm93wHGkg',
+      address: 'bxcKd6pSZ3aKw9rTH3n4DNXrRWwFeUkokHwVdECgtWe37oqQaKHXLGVD2kKapFyF1m2twrwDFZ49WWX7euTWeDyt1F5o7aZxy',
       publicViewKey: '080a6e9b17de47ec62c8a1efe0640b554a2cde7204b9b07bdf9bd225eeeb1c47',
       privateViewKey: '7bea1907940afdd480eff7c4bcadb478a0fbb626df9e3ed74ae801e18f53e104',
       publicSpendKey: '3eb884d3440d71326e27cc07a861b873e72abd339feb654660c36a008a0028b3',
@@ -71,7 +71,7 @@ describe('cryptonote_utils tests', function () {
   it('creates new integrated address', async function () {
     const WABridge = await require(wasmLocation)({})
     const decoded = WABridge.newIntegratedAddress(
-      '43zxvpcj5Xv9SEkNXbMCG7LPQStHMpFCQCmkmR4u5nzjWwq5Xkv5VmGgYEsHXg4ja2FGRD5wMWbBVMijDTqmmVqm93wHGkg',
+      'bxcKd6pSZ3aKw9rTH3n4DNXrRWwFeUkokHwVdECgtWe37oqQaKHXLGVD2kKapFyF1m2twrwDFZ49WWX7euTWeDyt1F5o7aZxy',
       '07749f00b7e3a2f6',
       nettype
     )
@@ -85,7 +85,7 @@ describe('cryptonote_utils tests', function () {
     const WABridge = await require(wasmLocation)({})
     chai.expect(() => {
       const address = WABridge.newIntegratedAddress(
-        '43zxvpcj5Xv9SEkNXbMCG7LPQStHMpFCQCmkmR4u5nzjWwq5Xkv5VmGgYEsHXg4ja2FGRD5wMWbBVMijDTqmmVqm93wHGkg',
+        'bxcKd6pSZ3aKw9rTH3n4DNXrRWwFeUkokHwVdECgtWe37oqQaKHXLGVD2kKapFyF1m2twrwDFZ49WWX7euTWeDyt1F5o7aZxy',
         '07749f00b7e3a2f#',
         'MAINNET'
       )
@@ -98,8 +98,8 @@ describe('cryptonote_utils tests', function () {
   it('checks if two mnemonics are the same', async function () {
     const WABridge = await require(wasmLocation)({})
     const decoded = WABridge.compareMnemonics(
-      'foxe selfish hum nexus juven dodeg pepp ember biscuti elap jazz vibrate biscui',
-      'fox sel hum nex juv dod pep emb bis ela jaz vib bis'
+      'foxes selfish humid nexus juvenile dodge pepper ember biscuit elapse jazz vibrate foxes selfish humid nexus juvenile dodge pepper ember biscuit elapse jazz vibrate elapse',
+      'foxe selfi humi nexu juve dodg pepp embe bisc elap jazz vibr foxe selfi humi nexu juve dodg pepp embe bisc elap jazz vibr elap'
     )
     assert.strictEqual(
       decoded,
@@ -142,17 +142,17 @@ describe('cryptonote_utils tests', function () {
   it('derive seed and keys from mnemonic', async function () {
     const WABridge = await require(wasmLocation)({})
     const decoded = WABridge.seedAndKeysFromMnemonic(
-      'foxe selfish hum nexus juven dodeg pepp ember biscuti elap jazz vibrate biscui',
+      'foxes selfish humid nexus juvenile dodge pepper ember biscuit elapse jazz vibrate foxes selfish humid nexus juvenile dodge pepper ember biscuit elapse jazz vibrate elapse',
       'MAINNET'
     )
     const expected = {
-      seed: '9c973aa296b79bbf452781dd3d32ad7f',
+      seed: '9c973aa296b79bbf452781dd3d32ad7f9c973aa296b79bbf452781dd3d32ad7f',
       mnemonicLanguage: 'English',
-      address: '43zxvpcj5Xv9SEkNXbMCG7LPQStHMpFCQCmkmR4u5nzjWwq5Xkv5VmGgYEsHXg4ja2FGRD5wMWbBVMijDTqmmVqm93wHGkg',
-      publicViewKey: '080a6e9b17de47ec62c8a1efe0640b554a2cde7204b9b07bdf9bd225eeeb1c47',
-      privateViewKey: '7bea1907940afdd480eff7c4bcadb478a0fbb626df9e3ed74ae801e18f53e104',
-      publicSpendKey: '3eb884d3440d71326e27cc07a861b873e72abd339feb654660c36a008a0028b3',
-      privateSpendKey: '4e6d43cd03812b803c6f3206689f5fcc910005fc7e91d50d79b0776dbefcd803'
+      address: 'bxcKh72itZJUkr1d2ZiYphMwyAko9ztrieGsGhLFr3ssWJGvDadbabZFDQy8CHKRRdBxm5S54jXYudCE47TFqqDh27fxZE2LS',
+      publicViewKey: '0a337d23672854fae6958c8675644188a707e1bc29f2d8631324eb57aa4081de',
+      privateViewKey: 'cee48bb0eee1b2ce351697c384b11f0adda2dd99eeab0461199a190fcaea0b08',
+      publicSpendKey: '3edc01649cb5a5f12530332986327d3d0169a75196d7ded815b6a649bcb6af29',
+      privateSpendKey: '21cc8117de011b5769ddbb68275d94ed9b973aa296b79bbf452781dd3d32ad0f'
     }
     assert.deepStrictEqual(
       decoded,
@@ -201,7 +201,7 @@ describe('cryptonote_utils tests', function () {
         'one two three four five six seven eight nine ten eleven twelve thirteen',
         'MAINNET'
       )
-    }).to.throw('Invalid 13-word mnemonic')
+    }).to.throw('Please enter a 25 secret mnemonic')
   })
 
   it('throw error when passed invalid 25-word mnemonic derive seed and keys from mnemonic', async function () {
@@ -252,7 +252,7 @@ describe('cryptonote_utils tests', function () {
   it('validate login components', async function () {
     const WABridge = await require(wasmLocation)({})
     const decoded = WABridge.isValidKeys(
-      '43zxvpcj5Xv9SEkNXbMCG7LPQStHMpFCQCmkmR4u5nzjWwq5Xkv5VmGgYEsHXg4ja2FGRD5wMWbBVMijDTqmmVqm93wHGkg',
+      'bxcKd6pSZ3aKw9rTH3n4DNXrRWwFeUkokHwVdECgtWe37oqQaKHXLGVD2kKapFyF1m2twrwDFZ49WWX7euTWeDyt1F5o7aZxy',
       '7bea1907940afdd480eff7c4bcadb478a0fbb626df9e3ed74ae801e18f53e104',
       '4e6d43cd03812b803c6f3206689f5fcc910005fc7e91d50d79b0776dbefcd803',
       '',
@@ -275,7 +275,7 @@ describe('cryptonote_utils tests', function () {
 
     chai.expect(() => {
       WABridge.isValidKeys(
-        '43zxvpcj5Xv9SEkNXbMCG7LPQStHMpFCQCmkmR4u5nzjWwq5Xkv5VmGgYEsHXg4ja2FGRD5wMWbBVMijDTqmmVqm93wHGkg',
+        'bxcKd6pSZ3aKw9rTH3n4DNXrRWwFeUkokHwVdECgtWe37oqQaKHXLGVD2kKapFyF1m2twrwDFZ49WWX7euTWeDyt1F5o7aZxy',
         '7bea1907940afdd480eff7c4bcadb478a0fbb626df9e3ed74ae801e18f53e104',
         '4e6d43cd03812b803c6f3206689f5fcc910005fc7e91d50d79b0776dbefcd80#',
         '',
@@ -289,7 +289,7 @@ describe('cryptonote_utils tests', function () {
 
     chai.expect(() => {
       WABridge.isValidKeys(
-        '43zxvpcj5Xv9SEkNXbMCG7LPQStHMpFCQCmkmR4u5nzjWwq5Xkv5VmGgYEsHXg4ja2FGRD5wMWbBVMijDTqmmVqm93wHGkg',
+        'bxcKd6pSZ3aKw9rTH3n4DNXrRWwFeUkokHwVdECgtWe37oqQaKHXLGVD2kKapFyF1m2twrwDFZ49WWX7euTWeDyt1F5o7aZxy',
         '7bea1907940afdd480eff7c4bcadb478a0fbb626df9e3ed74ae801e18f53e104',
         '4e6d43cd03812b803c6f3206689f5fcc910005fc7e91d50d79b0776dbefcd806',
         '',
@@ -301,14 +301,14 @@ describe('cryptonote_utils tests', function () {
   it('decode mainnet primary address', async function () {
     const WABridge = await require(wasmLocation)({})
     const decoded = WABridge.decodeAddress(
-      '49qwWM9y7j1fvaBK684Y5sMbN8MZ3XwDLcSaqcKwjh5W9kn9qFigPBNBwzdq6TCAm2gKxQWrdZuEZQBMjQodi9cNRHuCbTr',
+      'bxcKd6pSZ3aKw9rTH3n4DNXrRWwFeUkokHwVdECgtWe37oqQaKHXLGVD2kKapFyF1m2twrwDFZ49WWX7euTWeDyt1F5o7aZxy',
       nettype
     )
     const expected = {
       isSubaddress: false,
       paymentId: undefined,
-      publicSpendKey: 'd8f1e81ecbe25ce8b596d426fb02fe7b1d4bb8d14c06b3d3e371a60eeea99534',
-      publicViewKey: '576f0e61e250d941746ed147f602b5eb1ea250ca385b028a935e166e18f74bd7'
+      publicSpendKey: '3eb884d3440d71326e27cc07a861b873e72abd339feb654660c36a008a0028b3',
+      publicViewKey: '080a6e9b17de47ec62c8a1efe0640b554a2cde7204b9b07bdf9bd225eeeb1c47'
     }
     assert.deepStrictEqual(decoded, expected)
   })
@@ -530,7 +530,7 @@ describe('cryptonote_utils tests', function () {
 
     assert.strictEqual(
       result,
-      13590000
+      16713000
     )
   })
 
