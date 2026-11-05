@@ -63,6 +63,11 @@ class MyMoneroLibAppBridgeClass extends MyMoneroCoreBridgeEssentialsClass
 		}
 		return args;
 	}
+	// The registration fee differs between networks, so name the one in use.
+	tokenRegistrationInfo(nettype)
+	{
+		return JSON.parse(this.Module.token_registration_info(nettype_utils.nettype_to_API_string(nettype)));
+	}
 	async__send_funds(fn_args)
 	{
 		const self = this;
@@ -219,6 +224,29 @@ class MyMoneroLibAppBridgeClass extends MyMoneroCoreBridgeEssentialsClass
 		}
 		if (typeof fn_args.resolvedPaymentID !== 'undefined' && fn_args.resolvedPaymentID !== null && fn_args.resolvedPaymentID !== "") {
 			args.resolvedPaymentID = fn_args.resolvedPaymentID;
+		}
+		//
+		// HF22 private tokens.
+		if (typeof fn_args.token_id !== 'undefined' && fn_args.token_id !== null && fn_args.token_id !== "") {
+			args.token_id = fn_args.token_id;
+		}
+		if (typeof fn_args.token_decimal_point !== 'undefined' && fn_args.token_decimal_point !== null && fn_args.token_decimal_point !== "") {
+			args.token_decimal_point = "" + fn_args.token_decimal_point;
+		}
+		if (typeof fn_args.is_deploy_token !== 'undefined' && fn_args.is_deploy_token) {
+			const d = fn_args.token_descriptor;
+			if (typeof d === 'undefined' || d === null) {
+				throw "Expected fn_args.token_descriptor when is_deploy_token is set"
+			}
+			args.is_deploy_token = true;
+			args.token_descriptor = {
+				ticker: "" + d.ticker,
+				full_name: "" + (d.full_name || ""),
+				meta_info: "" + (d.meta_info || ""),
+				decimal_point: "" + d.decimal_point,
+				total_max_supply: "" + d.total_max_supply,
+				current_supply: "" + (d.current_supply || "0")
+			};
 		}
 		const args_str = JSON.stringify(args, null, '')
 		const ret_string = this.Module.send_funds(args_str);
